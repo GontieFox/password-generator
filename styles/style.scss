@@ -10,14 +10,213 @@
     font-weight: bold;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
+/* Fonts */
+$JetBrainsMono: "JetBrainsMono", sans-serif;
 
-$backgroundLinear: linear-gradient(180deg, #14131B 0%, #08070B 100%);
+/* Colors */
+$backgroundLinear: linear-gradient(180deg, #14131b 0%, #08070b 100%);
 $gray: hsl(251, 9%, 53%);
 $white: hsl(252, 11%, 91%);
 $lightGreen: hsl(127, 100%, 82%);
-$lightBlack:hsl(248, 15%, 11%);
-$black: hsl(247, 11%, 15%);
+$lightBlack: hsl(246, 13%, 15%);
+$black: hsl(0, 3%, 8%);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $JetBrainsMono;
+}
+
+body {
+    background: linear-gradient(180deg, #14131B 0%, #08070B 100%);
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    color: $gray;
+    margin-top: 100px;
+    font-size: 22px;
+}
+
+.card {
+    width: 480px;
+    margin: 30px auto 0;
+
+    &__first {
+        margin: 10px 0;
+        padding: 20px 30px;
+        background-color: $lightBlack;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__password {
+        color: $gray;
+        opacity: 0.5;
+        font-size: 28px;
+
+        &_active {
+            opacity: 1;
+            color: $white;
+        }
+    }
+
+    &__copy-btn {
+        background: url(./../assets/images/icon-copy-green.svg);
+        background-size: cover;
+        width: 21px;
+        height: 24px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        margin-top: 5px;
+
+        &:hover {
+            background: url(./../assets/images/icon-copy-white.svg);
+        }
+    }
+
+    &__second {
+        margin-top: 20px;
+        padding: 20px 30px;
+        background-color: $lightBlack;
+    }
+
+    &__first-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        color: $white;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    &__count {
+        color: $lightGreen;
+        font-size: 28px;
+    }
+
+    &__range {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        background: $black;
+        background-image: linear-gradient($lightGreen, $lightGreen);
+        background-size: 0 100%;
+        background-repeat: no-repeat;
+        margin: 20px 0 40px;
+
+        &::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 100px;
+            background: $white;
+            cursor: pointer;
+            -webkit-appearance: none;
+            transition: all 0.1s ease-in;
+
+            &:hover {
+                background: $black;
+                border: 2px solid $lightGreen;
+            }
+        }
+    }
+
+    &__checks {
+        display: block;
+    }
+
+    &__check {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__checkbox {
+        -webkit-appearance: none;
+        border: 2px solid $white;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            border: 2px solid $lightGreen;
+        }
+
+        &:checked {
+            background-color: $lightGreen;
+            border: 2px solid $lightGreen;
+            background-image: url(./../assets/images/icon-check.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    &__label {
+        color: $white;
+        margin-left: 10px;
+    }
+
+    &__strength {
+        background-color: $black;
+        margin: 20px 0;
+        padding: 25px 20px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__strength-text {
+        color: $gray;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &__type-text {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__strength-section {
+        width: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__tab {
+        height: 20px;
+        width: 5px;
+        border: 2px solid $white;
+    }
+
+    &__generate-btn {
+        width: 100%;
+        height: 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: $lightGreen;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s ease-in;
+        &:hover {
+            background-color: transparent;
+            border: 2px solid $lightGreen;
+            color: $lightGreen;
+        }
+    }
+}

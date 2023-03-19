@@ -6,15 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password Generator</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-  
-
+  <h1 class="title">Password Generator</h1>
+  <div class="card">
+    <div class="card__first">
+      <h2 class="card__password">P4$5W0rD!</h2>
+      <button class="card__copy-btn"></button>
+    </div>
+    <div class="card__second">
+      <div class="card__first-section">
+        <h3 class="card__title">Character Length</h3>
+        <span class="card__count">0</span>
+      </div>
+      <form>
+        <label for="length"></label>
+        <input class="card__range" type="range" id="length" name="length" min="0" max="10" step="1" value="0">
+        <div class="card__checks">
+          <div class="card__check">
+            <input class="card__checkbox" type="checkbox" id="uppercase" name="uppercase">
+            <label class="card__label" for="uppercase">Include Uppercase Letters</label>
+          </div>
+          <div class="card__check">
+            <input class="card__checkbox" type="checkbox" id="lowercase" name="lowercase">
+            <label class="card__label" for="lowercase">Include Lowercase Letters</label>
+          </div>
+          <div class="card__check">
+            <input class="card__checkbox" type="checkbox" id="numbers" name="numbers">
+            <label class="card__label" for="numbers">Include Numbers</label>
+          </div>
+          <div class="card__check">
+            <input class="card__checkbox" type="checkbox" id="symbols" name="symbols">
+            <label class="card__label" for="symbols">Include Symbols</label>
+          </div>
+        </div>
+        <div class="card__strength">
+          <p class="card__strength-text">Strength</p>
+          <div class="card__tabs">
+            <span class="card__type-text">Medium</span>
+            <div class="card__strength-section">
+              <span class="card__tab"></span>
+              <span class="card__tab"></span>
+              <span class="card__tab"></span>
+              <span class="card__tab"></span>
+            </div>
+          </div>
+        </div>
+        <button class="card__generate-btn">Generate →</button>
+      </form>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
+  <script src="/index.js"></script>
 </body>
 
 </html>
