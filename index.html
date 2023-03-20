@@ -14,15 +14,14 @@
   <h1 class="title">Password Generator</h1>
   <div class="card">
     <div class="card__first">
-      <h2 class="card__password">P4$5W0rD!</h2>
+      <h2 class="card__password" id="password">P4$5W0rD!</h2>
       <button class="card__copy-btn"></button>
     </div>
     <div class="card__second">
       <div class="card__first-section">
         <h3 class="card__title">Character Length</h3>
-        <span class="card__count">0</span>
+        <span class="card__count" id="count">0</span>
       </div>
-      <form>
         <label for="length"></label>
         <input class="card__range" type="range" id="length" name="length" min="0" max="10" step="1" value="0">
         <div class="card__checks">
@@ -55,8 +54,7 @@
             </div>
           </div>
         </div>
-        <button class="card__generate-btn">Generate →</button>
-      </form>
+        <button class="card__generate-btn" id="generate">Generate →</button>
     </div>
   </div>
 
