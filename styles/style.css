@@ -19,6 +19,7 @@
 body {
   background: linear-gradient(180deg, #14131B 0%, #08070B 100%);
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .title {
@@ -183,4 +184,62 @@ body {
   background-color: transparent;
   border: 2px solid hsl(127, 100%, 82%);
   color: hsl(127, 100%, 82%);
+}
+
+@media (max-width: 580px) {
+  .title {
+    font-size: 18px;
+  }
+  .card {
+    width: 90%;
+  }
+  .card__first {
+    padding: 20px 20px;
+  }
+  .card__password {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  .card__copy-btn {
+    margin-top: 0;
+  }
+  .card__second {
+    padding: 20px 20px;
+  }
+  .card__count {
+    font-size: 22px;
+    margin-top: 5px;
+  }
+  .card__range {
+    height: 6px;
+    margin: 30px 0 40px;
+  }
+  .card__range::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+  .card__checkbox {
+    width: 14px;
+    height: 14px;
+  }
+  .card__label {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  .card__strength {
+    padding: 20px;
+  }
+  .card__strength-text {
+    font-size: 14px;
+  }
+  .card__type-text {
+    font-size: 14px;
+  }
+  .card__strength-section {
+    width: 50px;
+  }
+  .card__tab {
+    width: 4px;
+    height: 15px;
+  }
 }/*# sourceMappingURL=style.css.map */

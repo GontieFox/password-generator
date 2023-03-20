@@ -30,6 +30,7 @@ $black: hsl(0, 3%, 8%);
 body {
     background: linear-gradient(180deg, #14131B 0%, #08070B 100%);
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .title {
@@ -219,4 +220,77 @@ body {
             color: $lightGreen;
         }
     }
+}
+
+@media (max-width: 580px) {
+    .title {
+        font-size: 18px;
+    }
+
+   .card {
+    width: 90%;
+
+    &__first {
+        padding: 20px 20px;
+    }
+
+    &__password {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+    &__copy-btn {
+        margin-top: 0;
+    }
+
+    &__second {
+        padding: 20px 20px;
+    }
+
+    &__count {
+        font-size: 22px;
+        margin-top: 5px;
+    }
+
+    &__range {
+        height: 6px;
+        margin: 30px 0 40px;
+
+        &::-webkit-slider-thumb {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__checkbox {
+        width: 14px;
+        height: 14px;
+    }
+
+    &__label {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    &__strength {
+        padding: 20px;
+    }
+
+    &__strength-text {
+        font-size: 14px;
+    }
+
+    &__type-text {
+        font-size: 14px;
+    }
+
+    &__strength-section {
+        width: 50px;
+    }
+
+    &__tab {
+        width: 4px;
+        height: 15px;
+    }
+   } 
 }
