@@ -51,6 +51,15 @@ function generatePassword() {
   }
 
   $("#password").text(password); 
+  $("#password").addClass("card__password_active");
 }
 
 $("#generate").on("click", generatePassword);
+
+/* Copy password */
+$("#copy").on("click", function() {
+  const passwordText = $("#password").text();
+  const tempElement = $("<textarea>").val(passwordText).appendTo("body").select();
+  document.execCommand("copy");
+  tempElement.remove();
+});
