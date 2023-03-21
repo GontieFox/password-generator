@@ -17,7 +17,6 @@ function generatePassword() {
   const arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   const arrSymbol = ['!', '@', '#', '$', '%', '?', '-', '+', '=', '~'];
 
-
   const compareRandom = () => Math.random() - 0.5;
 
   const randomInteger = (min, max) => Math.round(min - 0.5 + Math.random() * (max - min + 1));
@@ -50,14 +49,44 @@ function generatePassword() {
     password += arr[randomInteger(0, arr.length - 1)];
   }
 
-  $("#password").text(password); 
+  $("#password").text(password);
   $("#password").addClass("card__password_active");
 }
 
-$("#generate").on("click", generatePassword);
+/* Check password strength*/
+function checkPasswordStrength() {
+  let passwordLength = $("#length").val();
+
+  let uppercaseChecked = $("#uppercase").prop("checked");
+  let lowercaseChecked = $("#lowercase").prop("checked");
+  let numbersChecked = $("#numbers").prop("checked");
+  let symbolsChecked = $("#symbols").prop("checked");
+
+  if (passwordLength === "" || (!uppercaseChecked && !lowercaseChecked && !numbersChecked && !symbolsChecked)) {
+    return "";
+  } else if (passwordLength < 1 && (uppercaseChecked || lowercaseChecked || numbersChecked || symbolsChecked)) {
+    return "";
+  } else if (passwordLength < 4) {
+    return "very weak";
+  } else if (passwordLength < 6) {
+    return "weak";
+  } else if (passwordLength < 8) {
+    return "medium";
+  } else if (passwordLength <= 10) {
+    return "strong";
+  } 
+}
+
+/* Click button and generate password */
+$("#generate").on("click", function () {
+  const password = generatePassword();
+  const strength = checkPasswordStrength(password);
+
+  $("#strength").text(strength);
+});
 
 /* Copy password */
-$("#copy").on("click", function() {
+$("#copy").on("click", function () {
   const passwordText = $("#password").text();
   const tempElement = $("<textarea>").val(passwordText).appendTo("body").select();
   document.execCommand("copy");
