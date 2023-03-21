@@ -53,28 +53,45 @@ function generatePassword() {
   $("#password").addClass("card__password_active");
 }
 
+/* Set tab colors */
+function setColor(tabOneColor, tabTwoColor, tabThreeColor, tabFourColor) {
+  const tabOne = $("#tab-one");
+  const tabTwo = $("#tab-two");
+  const tabThree = $("#tab-three");
+  const tabFour = $("#tab-four");
+
+  tabOne.css("background-color", tabOneColor);
+  tabTwo.css("background-color", tabTwoColor);
+  tabThree.css("background-color", tabThreeColor);
+  tabFour.css("background-color", tabFourColor);
+}
+
 /* Check password strength*/
 function checkPasswordStrength() {
-  let passwordLength = $("#length").val();
+  const passwordLength = $("#length").val();
 
-  let uppercaseChecked = $("#uppercase").prop("checked");
-  let lowercaseChecked = $("#lowercase").prop("checked");
-  let numbersChecked = $("#numbers").prop("checked");
-  let symbolsChecked = $("#symbols").prop("checked");
+  const uppercaseChecked = $("#uppercase").prop("checked");
+  const lowercaseChecked = $("#lowercase").prop("checked");
+  const numbersChecked = $("#numbers").prop("checked");
+  const symbolsChecked = $("#symbols").prop("checked");
 
   if (passwordLength === "" || (!uppercaseChecked && !lowercaseChecked && !numbersChecked && !symbolsChecked)) {
     return "";
   } else if (passwordLength < 1 && (uppercaseChecked || lowercaseChecked || numbersChecked || symbolsChecked)) {
     return "";
   } else if (passwordLength < 4) {
+    setColor("red", "transparent", "transparent", "transparent");
     return "very weak";
   } else if (passwordLength < 6) {
+    setColor("orange", "orange", "transparent", "transparent");
     return "weak";
   } else if (passwordLength < 8) {
+    setColor("yellow", "yellow", "yellow", "transparent");
     return "medium";
   } else if (passwordLength <= 10) {
+    setColor("lightgreen", "lightgreen", "lightgreen", "lightgreen");
     return "strong";
-  } 
+  }
 }
 
 /* Click button and generate password */
