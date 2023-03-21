@@ -63,6 +63,13 @@ body {
         }
     }
 
+    &__copy-text {
+        font-size: 18px;
+        color: $white;
+        margin-right: 10px;
+        display: none;
+    }
+
     &__copy-btn {
         background: url(./../assets/images/icon-copy-green.svg);
         background-size: cover;

@@ -100,6 +100,7 @@ $("#generate").on("click", function () {
   const strength = checkPasswordStrength(password);
 
   $("#strength").text(strength);
+  $(".card__copy-text").css("display", "none");
 });
 
 /* Copy password */
@@ -108,4 +109,5 @@ $("#copy").on("click", function () {
   const tempElement = $("<textarea>").val(passwordText).appendTo("body").select();
   document.execCommand("copy");
   tempElement.remove();
+  $(".card__copy-text").css("display", "inline-block");
 });

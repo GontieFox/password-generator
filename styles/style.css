@@ -49,6 +49,12 @@ body {
   opacity: 1;
   color: hsl(252, 11%, 91%);
 }
+.card__copy-text {
+  font-size: 18px;
+  color: hsl(252, 11%, 91%);
+  margin-right: 10px;
+  display: none;
+}
 .card__copy-btn {
   background: url(./../assets/images/icon-copy-green.svg);
   background-size: cover;
